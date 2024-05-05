@@ -1,0 +1,9 @@
+﻿daycounter = 96
+take_character_item(charname: string, itemname: Parsnip Seeds, amount: 1)
+reply(message: “Planted your parsnip in the ground! Come back in 4 days.”)
+repeat
+        asleep(time: 3600)
+daycounter = daycounter - 1
+until daycounter == 0
+reply(message: charname + “your parsnip is fully grown!”)
+give_character_item(charname: string, itemname: Parsnip, amount: 1)
